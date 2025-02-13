@@ -6,3 +6,4 @@
 //
 
 #include "Client.hpp"
+int Client::lastClientId = 0;
