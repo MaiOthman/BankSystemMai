@@ -1,9 +1,4 @@
-//
-//  Admin.hpp
-//  BankSystemFirst
-//
-//  Created by Mai Mahmoud on 13.02.25.
-//
+
 
 #ifndef Admin_hpp
 #define Admin_hpp
@@ -25,6 +20,11 @@ public:
     static int getLastAdminId();
     void displayData();
     void setIdAdmin(int id);
+    
+    void addEmployee(Employee& employee);
+    Employee* searchEmployee(int id);
+    void editEmployee(int id, string name, string password, double salary);
+    void listEmployee();
 };
 #endif /* Admin_hpp */
 

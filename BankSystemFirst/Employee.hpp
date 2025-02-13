@@ -1,4 +1,3 @@
-//
 
 #ifndef Employee_hpp
 #define Employee_hpp
@@ -22,10 +21,12 @@ public:
     void setIdEmployee(int id);
     double getSalary();
     int getIdEmployee();
+    static int getLastEmployeeId();
     void AddClient(Client &client);
-    void searchClient(int id);
+    Client* searchClient(int id);
     void displayData();
     void generateId();
-    static int getLastEmployeeId();
+    void listClient();
+    void editClient(int id, string name, string password, double balance);
 };
 #endif /* Employee_hpp */

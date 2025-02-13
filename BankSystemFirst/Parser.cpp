@@ -1,9 +1,3 @@
-//
-//  Parser.cpp
-//  BankSystemFirst
-//
-//  Created by Mai Mahmoud on 13.02.25.
-//
 
 #include "Parser.hpp"
  vector<string> Parser::split(string line){
@@ -11,7 +5,6 @@
     vector<string> personVector;
     auto start = 0;
     auto end = line.find(del);
-    cout << end;
     while(end!=string::npos){
         personVector.push_back(line.substr(start, end-start));
         start = end+1;

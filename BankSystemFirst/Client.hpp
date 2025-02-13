@@ -10,64 +10,22 @@ private:
     static int lastClientId;
     int idClient = lastClientId;
 public:
-    Client(): Person(){
-        generateId();
-    }
+    Client();
     //constructor
-    Client(string name, string password, double balance): Person(name, password){
-        setBalance(balance);
-        generateId();
-    }
+    Client(string name, string password, double balance);
     //setters
-    void setBalance(double balance){
-        if(Validator::isBalance(balance)){
-            this->balance = balance;
-        } else {
-            cout << "The balance must be >= 1500" << endl;
-        }
-    }
-    void setIdClient(int id){
-        idClient = id;
-    }
+    void setBalance(double balance);
+    void setIdClient(int id);
     //getters
-    double getBalance(){
-        return balance;
-    }
-    int getIdClient(){
-        return idClient;
-    }
+    double getBalance();
+    int getIdClient();
 
-    void deposit(double amount){
-        if(amount >=0){
-            setBalance(balance + amount);
-        }
-    }
-    void withdraw(double amount){
-        if(amount >=0){
-            setBalance(balance - amount);
-        }
-    }
-    void transferTo(double amount, Client &c2){
-        if(amount >=0){
-            setBalance(balance - amount);
-            c2.setBalance(c2.balance + amount);
-        }
-    }
-    void checkBalance(){
-        cout << "Your current balance is: " << balance << endl;
-    }
-    void displayData(){
-        cout << "id: " << idClient << endl;
-        Person::displayData();
-        checkBalance();
-        cout << "=================================" << endl;
-    }
-    void generateId(){
-        idClient = ++lastClientId;
-    }
-    static int getLastClientId(){
-        return lastClientId;
-    }
-    
+    void deposit(double amount);
+    void withdraw(double amount);
+    void transferTo(double amount, Client &c2);
+    void checkBalance();
+    void displayData();
+    void generateId();
+    static int getLastClientId();
 };
 #endif /* Client_hpp */

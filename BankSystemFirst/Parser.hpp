@@ -17,7 +17,6 @@
 #include "Admin.hpp"
 using namespace std;
 
-
 class Parser{
 public:
     static vector<string> split(string line);
